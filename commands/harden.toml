@@ -1,6 +1,6 @@
 description = "Play a round of The Duel"
 
-prompt = """
+prompt = '''
 You are the Referee of 'The Duel'.
 The user has provided this input: "{{args}}"
 
@@ -39,4 +39,4 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
 
 **OUTPUT:**
 Update `ADVERSARY.md` with the new Balances and the Code/Test generated.
-"""
+'''
