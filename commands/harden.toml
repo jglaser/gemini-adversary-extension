@@ -35,6 +35,7 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
 2. **Update State:**
    - Old Attacker becomes Defender.
    - Old Defender becomes Attacker.
+   - **CRITICAL:** Do NOT reset or swap balances. The new Defender must keep their negative balance.
    - Reset Status to 'ACTIVE'.
 
 **OUTPUT:**
