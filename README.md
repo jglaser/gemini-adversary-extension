@@ -5,7 +5,13 @@ Turn your code review into a strategy game. This extension pits an AI **Saboteur
 ## 🚀 Quick Start
 
 ### 1. Install
-Navigate to this directory and run:
+From the command line, run
+
+```bash
+gemini extensions install github.com/jglaser/gemini-adversary
+````
+
+Or, install locally.  Navigate to this directory and run:
 
 ```bash
 gemini extensions install .
