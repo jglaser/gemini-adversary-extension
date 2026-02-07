@@ -1,22 +1,17 @@
-# ⚔️ Adversarial Hardening: Round {{round}}
+# ⚔️ The Duel: Round {{round}}
 
-**Status:** {{status}}  *(Select one: RED_TURN, ARBITER_TURN, BLUE_TURN, EQUILIBRIUM)*
-**Target File:** `{{target_file}}`
+**Status:** {{status}} *(ACTIVE / BANKRUPTCY_SWAP / EQUILIBRIUM)*
+**Active Attacker:** {{attacker_name}} (Initially RED)
+**Active Defender:** {{defender_name}} (Initially BLUE)
 
-## 🔴 Red Team (Saboteur)
-**Goal:** Create a test case that fails against current code.
-- [ ] Test Created: `{{test_file}}`
-- [ ] Test Execution Result: {{test_result}}
+## 🏦 Bank (Entropy Tokens)
+* 🔴 **Red Balance:** {{red_balance}} $\mathcal{S}$
+* 🔵 **Blue Balance:** {{blue_balance}} $\mathcal{S}$
 
-## ⚖️ Arbiter (Judge)
-**Verdict:** {{verdict}} *(FAIR / UNFAIR)*
-**Reasoning:**
-> {{reasoning}}
-
-## 🔵 Blue Team (Engineer)
-**Goal:** Fix code to pass test without regression.
-- [ ] Fix Applied
-- [ ] Regression Tests Passed
+## 📜 Ledger
+* **Last Move:** {{last_move_description}}
+* **Cost:** -{{cost}} $\mathcal{S}$
+* **Result:** {{result}}
 
 ---
-*Instructions for Agent: Update this file after every action. Do not proceed to Blue Team if Arbiter says UNFAIR.*
+*Instructions: Update balances after every turn based on LOC generated.*
