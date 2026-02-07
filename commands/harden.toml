@@ -1,0 +1,29 @@
+description = "Start or continue the Adversarial Hardening game"
+
+# {{args}} captures whatever you type after /harden
+prompt = """
+You are orchestrating an Adversarial Hardening Game.
+The user has provided this context/hint: "{{args}}"
+
+**PHASE 1: CHECK GAME STATE**
+Look for `ADVERSARY.md`.
+
+**IF `ADVERSARY.md` DOES NOT EXIST:**
+1. Create it using the standard template.
+2. **IMPORTANT:** In the Markdown file, add a section `## 🎯 Mission Focus` and write down the user's context ("{{args}}").
+3. Set Status to 'RED_TURN'.
+
+**IF `ADVERSARY.md` EXISTS:**
+1. Read the `## 🎯 Mission Focus` section to remind yourself of the goal.
+2. Read the 'Status' field.
+
+**PHASE 2: EXECUTE TURN**
+(Perform the role based on the Status field...)
+
+---
+**🔴 IF STATUS = RED_TURN:**
+Act as the **Saboteur**.
+**CRITICAL:** Use the "Mission Focus" ("{{args}}") to guide your attack. Do not just test randomly.
+(e.g., If the user said "race condition", write a concurrency test.)
+...
+"""
