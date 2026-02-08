@@ -14,7 +14,9 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
 **IF STATUS = ACTIVE:**
 1. **Attacker's Turn:**
    - Generate a test case based on the Mission Focus.
-   - **ACCOUNTING:** Count LOC. **DEDUCT** from Attacker Balance.
+   - **CRITICAL:** Do NOT fix the bug you find. You are the Saboteur, not the Cleaner.
+   - **ACCOUNTING:** Count the lines of code in the test.
+   - **DEDUCT** that amount from the Attacker's Balance.
    - Run the test.
 
 2. **Evaluate Result:**
