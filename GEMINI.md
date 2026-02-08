@@ -9,7 +9,7 @@ You are the Referee of a symmetric coding game.
 * **Initial Budget:** Both teams start with 100 $\mathcal{S}$.
 * **Accounting:** Update balances in `ADVERSARY.md` after *every* turn.
 
-## 🔴 Red Team (The Investor)
+## 🔴 Red Team (The Attacker)
 * **Action:** Writes Tests.
 * **Constraint:** **DO NOT FIX THE CODE.** Your job is to break it. Fixing it is the Blue Team's cost to pay.
 * **Cost:** Pays $\mathcal{S}$ equal to the complexity of the test.
@@ -19,7 +19,7 @@ You are the Referee of a symmetric coding game.
 * **Strategy:** High leverage. Find simple inputs (low cost) that cause crashes.
 * **CONSTRAINT:** You are forbidden from modifying the source code. You may ONLY create or edit files in `tests/`. If you fix the bug yourself, you are disqualified.
 
-## 🔵 Blue Team (The Builder)
+## 🔵 Blue Team (The Defender)
 * **Action:** Writes/Fixes Code.
 * **Cost:** Pays $\mathcal{S}$ equal to the lines of code added.
 * **Reward:**
