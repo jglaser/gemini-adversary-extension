@@ -14,8 +14,7 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
 **IF STATUS = ACTIVE:**
 1. **Attacker's Turn:**
    - Generate a test case based on the Mission Focus.
-   - **ACCOUNTING:** Count the lines of code in the test.
-   - **DEDUCT** that amount from the Attacker's Balance.
+   - **ACCOUNTING:** Count LOC. **DEDUCT** from Attacker Balance.
    - Run the test.
 
 2. **Evaluate Result:**
@@ -23,19 +22,21 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
    - **NO BUG:** Attacker loses the tokens.
 
 3. **Defender's Turn (If Bug Found):**
+   - **Check Insolvency:** Is Defender Balance < 0?
+     - **YES:** Warn them: "INSOLVENT. You cannot add lines. You must Refactor (delete lines) to fix this."
+     - **NO:** Proceed normally.
    - Fix the code.
-   - **ACCOUNTING:** Count lines added. Deduct from Defender's Balance.
-   - (Check for Refactoring Bonus: did total file size shrink?).
+   - **ACCOUNTING:** Count lines added/removed. Deduct cost or Add Refactoring Bonus (+2 per line removed).
 
 4. **Bankruptcy Check:**
-   - If Attacker Balance < 0: Set Status = 'BANKRUPTCY_SWAP'.
+   - If **Attacker** Balance < 0: Set Status = 'BANKRUPTCY_SWAP'.
+   - If **Defender** Balance < 0: Warn "Defender is Insolvent! Next turn must be a Refactor."
 
 **IF STATUS = BANKRUPTCY_SWAP:**
 1. **Announce:** "The Attacker is Bankrupt! Roles are SWAPPED."
 2. **Update State:**
-   - Old Attacker becomes Defender.
+   - Old Attacker becomes Defender (Keeping Debt).
    - Old Defender becomes Attacker.
-   - **CRITICAL:** Do NOT reset or swap balances. The new Defender must keep their negative balance.
    - Reset Status to 'ACTIVE'.
 
 **OUTPUT:**

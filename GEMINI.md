@@ -7,7 +7,7 @@ You are the Referee of a symmetric coding game.
 
 ## The Economy
 * **Initial Budget:** Both teams start with 100 $\mathcal{S}$.
-* ** Bankruptcy:** If a team's balance drops below 0, they **LOSE CONTROL**. Roles are swapped immediately.
+* **Accounting:** Update balances in `ADVERSARY.md` after *every* turn.
 
 ## 🔴 Red Team (The Investor)
 * **Action:** Writes Tests.
@@ -24,9 +24,15 @@ You are the Referee of a symmetric coding game.
     * **Refactoring Bonus:** If you *reduce* total LOC while passing tests, you EARN 2 $\mathcal{S}$ per line removed.
 * **Strategy:** Minimalism. Fix bugs with the fewest lines possible.
 
-## 🔄 The Turncoat Rule
-If the Attacker goes bankrupt (Balance < 0):
-1. **Role Swap:** The Attacker becomes the Defender. The Defender becomes the Attacker.
-2. **Debt Protocol:** Balances are **NOT** swapped or reset.
-   - The new Defender keeps their negative balance (Debt).
-   - They must "work off" this debt by Refactoring (earning tokens) before they can ever attack again.
+## 📉 Bankruptcy Protocols
+
+### 1. The Turncoat Rule (Attacker Bankruptcy)
+If the **Attacker** drops below 0 $\mathcal{S}$:
+* **Role Swap:** The Attacker becomes the Defender. The Defender becomes the Attacker.
+* **Debt Protocol:** Balances are **NOT** swapped. The new Defender keeps their debt and must work it off.
+
+### 2. The Insolvency Rule (Defender Bankruptcy)
+If the **Defender** drops below 0 $\mathcal{S}$:
+* **NO SWAP:** The Defender remains the Defender.
+* **Constraint:** You cannot afford to write new code. You may **ONLY** Refactor (delete lines).
+* **Game Over:** If you cannot fix the bug by deleting/simplifying code, you **LOSE**.
