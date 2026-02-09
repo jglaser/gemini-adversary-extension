@@ -1,6 +1,6 @@
 {
   "name": "adversarial-duel",
-  "version": "2.0.0",
+  "version": "2.1.1",
   "description": "A symmetric, resource-constrained hardening game.",
   "contextFileName": "GEMINI.md",
   "commands": [
