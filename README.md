@@ -1,4 +1,4 @@
-# Gemini Adversarial Duel (v2.1)
+# Gemini Code Duel (v2.1)
 
 Turn code hardening into a balanced, zero-sum strategy game.
 
