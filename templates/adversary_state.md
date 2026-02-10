@@ -11,7 +11,8 @@
 ## 🦓 Official Review
 * **Last Play:** {{last_move_description}}
 * **Complexity Cost:** -{{cost}} $\mathcal{S}$
+* **Penalties (Torvalds Tax):** -{{penalties}} $\mathcal{S}$
 * **Result:** {{result}}
 
 ---
-*Instructions: Update balances after every turn based on Ruff (C901) scores.*
+*Instructions: Update balances after every turn based on Ruff scores and penalties.*

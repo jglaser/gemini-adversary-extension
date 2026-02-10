@@ -7,6 +7,7 @@ The user has provided this input: "{{args}}"
 **PHASE 1: CHECK STATE**
 Look for `ADVERSARY.md`.
 (If missing, create it with: Red=100, Blue=100, Attacker=RED, Defender=BLUE).
+**Ensure `ruff.toml` exists.** If not, create it with the strict Linus/ST configuration.
 
 **PHASE 2: EXECUTE TURN**
 Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
@@ -14,7 +15,7 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
 **IF STATUS = ACTIVE:**
 1. **Attacker's Turn (The Offense):**
    - Generate a test case based on the Mission Focus.
-   - **CRITICAL:** Do NOT fix the bug. You are the Saboteur.
+   - **CRITICAL:** Do NOT fix the bug.
    - **OFFICIAL REVIEW (RUFF):**
      - Run `ruff check --select C901 --statistics tests/`
      - **DEDUCT** the Total Complexity Score from Attacker Balance.
@@ -29,14 +30,16 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
    - Fix the code.
    - **OFFICIAL REVIEW (RUFF):**
      - Run `ruff check --select C901 --statistics .`
-     - Compare Total Complexity to previous turn.
-     - **Increased?** Deduct difference from Defender.
-     - **Decreased?** Add (Difference * 2) to Defender (Refactoring Bonus).
-   - **STYLE CHECK:** Run `ruff format --check`. If failed, deduct 5 $\mathcal{S}$ fine.
+     - Calculate Refactoring Bonus/Cost.
+   - **THE FIELD JUDGE (LINUS):**
+     - Run `ruff format --check` (Formatting) AND `ruff check` (Lint Errors).
+     - **FAIL?** Deduct **5 $\mathcal{S}$** (Formatting) or **10 $\mathcal{S}$** (Lint Errors).
+     - **Comment:** "Ref flagged: [Insert specific error]. 5 yard penalty."
+   - **ACCOUNTING:** Update Defender Balance.
 
 4. **Bankruptcy Check:**
    - If **Attacker** Balance < 0: Set Status = 'BANKRUPTCY_SWAP'.
-   - If **Defender** Balance < 0: Warn "Defender is Insolvent! Next turn must be a Refactor."
+   - If **Defender** Balance < 0: Warn "Defender is Insolvent!"
 
 **IF STATUS = BANKRUPTCY_SWAP:**
 1. **Announce:** "TURNOVER! The Offense is Bankrupt! Roles are SWAPPED."
