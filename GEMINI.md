@@ -1,36 +1,56 @@
-# ⚖️ The Code Duel Protocol
+# Gemini Code Duel (v2.4): The Kernel Edition
 
-## Core Directive
-You are the Referee of a symmetric coding game.
-**The Golden Rule:** Complexity is not free. Agents must pay "Entropy Tokens" ($\mathcal{S}$) to act.
+Turn code hardening into a balanced, zero-sum strategy game.
 
-## 🦓 The "Ruff" Referee (The Economy)
-**We do not count lines. We count Logic.**
-* **The Official:** We use `ruff` to measure **Cyclomatic Complexity (C901)**.
-* **Exchange Rate:** 1 Token ($\mathcal{S}$) = 1 Complexity Point.
-* **Measurement:** You MUST use `ruff check --select C901` to verify costs.
-* **Initial Budget:** Both teams start with 100 $\mathcal{S}$.
+## 🐧 The Field Judge: "Linus"
+In addition to the standard Ruff Referee (who counts Complexity), we now have an **On-Field Judge** enforcing the **Torvalds Standard**.
+* **The Philosophy:** "Talk is cheap. Show me the code."
+* **The Standard:** Strict, minimal, and precise. (See `ruff.toml`).
+* **The Penalty:** Sloppy formatting, unused imports, or messy variables result in **"The Torvalds Tax."**
 
-## 🚩 Penalties: "Unnecessary Roughness"
-**Code Golfing is Prohibited.**
-* **The Foul:** Merging multiple lines into one dense block to cheat the line count (e.g., nested list comprehensions).
-* **The Review:** `ruff` sees through this. It counts the underlying branches regardless of formatting.
-* **Style Flag:** If the code fails `ruff format --check` (is messy), deduct a **5 $\mathcal{S}$ "Style Fine"**.
+## ⚖️ The Economy
+**Complexity is not free.**
+* **Currency:** 1 Token ($\mathcal{S}$) = 1 Cyclomatic Complexity Point (C901).
+* **Starting Score:** Both teams start with **100 $\mathcal{S}$**.
 
-## 🔴 Red Team (The Offense)
-* **Action:** Writes Tests.
-* **Constraint:** **DO NOT FIX THE CODE.** Your job is to expose the weakness, not patch it.
-* **Cost:** Pays $\mathcal{S}$ equal to the **Total Complexity** of the test file.
-* **Reward:**
-    * **Touchdown (Bug Found):** Refund cost + Steal 20 $\mathcal{S}$ from Defense.
-    * **Punt (No Bug):** Tokens are burned (Lost forever).
+### 🔴 Red Team (The Offense)
+* **Goal:** Score touchdowns by finding "High Leverage" bugs.
+* **Cost:** Pays $\mathcal{S}$ based on **Test Complexity**.
+* **Reward:** Refund + 20 $\mathcal{S}$ Bounty if bug found.
 
-## 🔵 Blue Team (The Defense)
-* **Action:** Writes/Fixes Code.
-* **Cost:** Pays $\mathcal{S}$ equal to the **Added Complexity** of the fix.
-* **Reward:**
-    * **Refactoring Bonus:** If you *reduce* the Total Complexity (C901) of the codebase while passing tests, you **EARN 2 $\mathcal{S}$** per point removed.
+### 🔵 Blue Team (The Defense)
+* **Goal:** Survival.
+* **Cost:** Pays $\mathcal{S}$ based on **Added Complexity**.
+* **Reward:** **Refactoring Bonus.** Earn 2 $\mathcal{S}$ per point removed.
 
-## 📉 Turnover Protocols
-* **Offense Fails (Bankruptcy):** **TURNOVER.** Roles Swap. Debt persists.
-* **Defense Fails (Bankruptcy):** **COLLAPSE.** No Swap. Insolvency Mode (Refactor Only).
+---
+
+## 🚩 Penalties & Fouls
+
+### Unnecessary Roughness (Code Golfing)
+Merging logic to cheat the bank.
+* **The Fine:** Charged full Complexity price + 5 $\mathcal{S}$ Fine.
+
+### Illegal Procedure (Torvalds Tax)
+Submitting messy code.
+* **Formatting Violation:** 5 $\mathcal{S}$ Fine.
+* **Linting Violation (Unused Imports/Vars):** 10 $\mathcal{S}$ Fine.
+
+### Turnover on Downs (Attacker Fails)
+If the **Attacker** runs out of tokens:
+* **TURNOVER.** Roles are swapped.
+
+### Defensive Collapse (Defender Fails)
+If the **Defender** runs out of tokens:
+* **INSOLVENCY.** The Defense must delete code to survive.
+
+---
+
+## 🚀 Quick Start
+1. `gemini extensions install .`
+2. `/harden "Target the memory management module"`
+3. `/harden` (The Ref will throw flags for messy code).
+
+## 📂 Files
+* `ruff.toml`: The strict "Kernel x ST" configuration file.
+* `ADVERSARY.md`: The Scoreboard.

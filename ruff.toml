@@ -1,0 +1,82 @@
+# Linux Kernel x ST Philosophy x Scientific Python
+# Strict, minimal, and precise.
+
+# ------------------------------------------------------------------------------
+# Core Formatting & Structure
+# ------------------------------------------------------------------------------
+line-length = 80
+indent-width = 4
+target-version = "py310"
+
+# Exclude common build/cache directories to keep scanning fast (ST philosophy).
+exclude = [
+    ".git",
+    ".ruff_cache",
+    ".venv",
+    "__pycache__",
+    "build",
+    "dist",
+]
+
+[format]
+# While Kernel uses tabs, Python mandates spaces (PEP 8).
+# We adhere to the language constraint but maintain the structural strictness.
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "lf"
+
+# ------------------------------------------------------------------------------
+# Linting Rules
+# ------------------------------------------------------------------------------
+[lint]
+# Selected Rulesets:
+# F   - Pyflakes (Basic errors)
+# E/W - Pycodestyle (Style enforcement)
+# C90 - McCabe (Enforce low complexity - Critical for ST philosophy)
+# N   - PEP8-naming (Consistent naming)
+# UP  - Pyupgrade (Keep syntax modern and minimal)
+# PL  - Pylint (Strict logic and complexity checks)
+# SIM - Flake8-simplify (The "suckless" ethos: simpler is better)
+# RET - Flake8-return (Enforce early returns, reducing nesting)
+# NPY - NumPy-specific rules (For scientific accuracy)
+# D   - Pydocstyle (Documentation standards)
+select = ["F", "E", "W", "C90", "N", "UP", "PL", "SIM", "RET", "NPY", "D"]
+
+# Rules to Ignore:
+# E203: Whitespace before ':' (Conflicts with Black/Ruff formatter)
+# D100: Missing docstring in public module (Sometimes redundant in scripts)
+# PLR0913: Too many arguments (Scientific formulas often need many parameters)
+ignore = ["E203", "D100", "PLR0913"]
+
+# ------------------------------------------------------------------------------
+# Rule Specific Configuration
+# ------------------------------------------------------------------------------
+
+[lint.mccabe]
+# ST Philosophy: Code should be trivially understandable.
+# Linux Kernel typically aims for functions to fit on one screen.
+# We set a strict complexity limit.
+max-complexity = 10
+
+[lint.pydocstyle]
+# Scientific standard: Use NumPy style docstrings.
+convention = "numpy"
+
+[lint.pylint]
+# Enforce small, single-purpose functions (Unix philosophy).
+max-statements = 50
+max-branches = 12
+max-returns = 6
+# Allow standard scientific constants/variables even if short (e.g., x, y, z, t).
+allow-magic-value-types = ["int", "float"]
+
+[lint.per-file-ignores]
+# Allow relaxed rules for tests and notebooks
+"tests/*" = ["D", "PLR2004", "S101"]
+"*.ipynb" = ["D", "E402"]
+
+[lint.isort]
+# Organize imports clearly.
+force-single-line = false
+lines-after-imports = 2
