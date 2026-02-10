@@ -1,7 +1,7 @@
 {
   "name": "adversarial-duel",
-  "version": "2.1.1",
-  "description": "A symmetric, resource-constrained hardening game.",
+  "version": "2.3.0",
+  "description": "A symmetric, resource-constrained hardening game with Ruff integration.",
   "contextFileName": "GEMINI.md",
   "commands": [
     "commands/harden.toml"

@@ -12,30 +12,34 @@ Look for `ADVERSARY.md`.
 Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
 
 **IF STATUS = ACTIVE:**
-1. **Attacker's Turn:**
+1. **Attacker's Turn (The Offense):**
    - Generate a test case based on the Mission Focus.
-   - **CRITICAL:** Do NOT fix the bug you find. You are the Saboteur, not the Cleaner.
-   - **ACCOUNTING:** Count the lines of code in the test.
-   - **DEDUCT** that amount from the Attacker's Balance.
+   - **CRITICAL:** Do NOT fix the bug. You are the Saboteur.
+   - **OFFICIAL REVIEW (RUFF):**
+     - Run `ruff check --select C901 --statistics tests/`
+     - **DEDUCT** the Total Complexity Score from Attacker Balance.
    - Run the test.
 
 2. **Evaluate Result:**
-   - **BUG FOUND:** Attacker gets Refund + 20 $\mathcal{S}$ from Defender.
-   - **NO BUG:** Attacker loses the tokens.
+   - **BUG FOUND (Touchdown):** Attacker gets Refund + 20 $\mathcal{S}$ from Defender.
+   - **NO BUG (Punt):** Attacker loses the tokens.
 
 3. **Defender's Turn (If Bug Found):**
-   - **Check Insolvency:** Is Defender Balance < 0?
-     - **YES:** Warn them: "INSOLVENT. You cannot add lines. You must Refactor (delete lines) to fix this."
-     - **NO:** Proceed normally.
+   - **Check Insolvency:** If Balance < 0, warn "Refactor Only."
    - Fix the code.
-   - **ACCOUNTING:** Count lines added/removed. Deduct cost or Add Refactoring Bonus (+2 per line removed).
+   - **OFFICIAL REVIEW (RUFF):**
+     - Run `ruff check --select C901 --statistics .`
+     - Compare Total Complexity to previous turn.
+     - **Increased?** Deduct difference from Defender.
+     - **Decreased?** Add (Difference * 2) to Defender (Refactoring Bonus).
+   - **STYLE CHECK:** Run `ruff format --check`. If failed, deduct 5 $\mathcal{S}$ fine.
 
 4. **Bankruptcy Check:**
    - If **Attacker** Balance < 0: Set Status = 'BANKRUPTCY_SWAP'.
    - If **Defender** Balance < 0: Warn "Defender is Insolvent! Next turn must be a Refactor."
 
 **IF STATUS = BANKRUPTCY_SWAP:**
-1. **Announce:** "The Attacker is Bankrupt! Roles are SWAPPED."
+1. **Announce:** "TURNOVER! The Offense is Bankrupt! Roles are SWAPPED."
 2. **Update State:**
    - Old Attacker becomes Defender (Keeping Debt).
    - Old Defender becomes Attacker.
