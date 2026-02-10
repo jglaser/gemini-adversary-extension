@@ -45,7 +45,23 @@ If the **Defender** runs out of tokens:
 ## 🚀 Quick Start
 
 ### 1. Install
+
+[Install npm](https://www.geeksforgeeks.org/node-js/how-to-download-and-install-node-js-and-npm/)
+
+Next install the gemini-cli package,
+
+    npm install -g @google/gemini-cli
+
+Then run the command-line interface, `gemini` on its own to login.
+
 Navigate to this directory and run:
 
 ```bash
+pip3 install pytest ruff
 gemini extensions install .
+gemini
+```
+
+This will start the gemini cli interface.  To test the new /harden command, try:
+
+    /harden buggy.py
