@@ -65,3 +65,7 @@ gemini
 This will start the gemini cli interface.  To test the new /harden command, try:
 
     /harden buggy.py
+
+### 2. Note of caution
+
+A game should be played on a new feature branch.
