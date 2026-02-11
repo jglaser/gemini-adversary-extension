@@ -57,7 +57,7 @@ If the **Defender** runs out of tokens:
 
 ### 1. Install
 
-[Install npm](https://www.geeksforgeeks.org/node-js/how-to-download-and-install-node-js-and-npm/)
+[Install npm](https://nodejs.org/en/download/)
 
 Next install the gemini-cli package,
 
