@@ -22,8 +22,11 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
    - Run the test.
 
 2. **Evaluate Result:**
-   - **BUG FOUND (Touchdown):** Attacker gets Refund + 20 $\mathcal{S}$ from Defender.
-   - **NO BUG (Punt):** Attacker loses the tokens.
+   - **BUG FOUND (Touchdown):**
+     - Attacker gets Refund + 20 $\mathcal{S}$ Bounty (Printed by Bank).
+     - **NEW RULE:** Defender gets +{{test_complexity}} $\mathcal{S}$ (Subsidized Defense).
+     - *Reasoning:* The complexity of the attack fuels the defense.
+   - **NO BUG (Punt):** Attacker loses tokens.
 
 3. **Defender's Turn (If Bug Found):**
    - **Check Insolvency:** If Balance < 0, warn "Refactor Only."

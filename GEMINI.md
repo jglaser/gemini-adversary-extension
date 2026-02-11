@@ -8,10 +8,10 @@ In addition to the standard Ruff Referee (who counts Complexity), we now have an
 * **The Standard:** Strict, minimal, and precise. (See `ruff.toml`).
 * **The Penalty:** Sloppy formatting, unused imports, or messy variables result in **"The Torvalds Tax."**
 
-## ⚖️ The Economy
-**Complexity is not free.**
-* **Currency:** 1 Token ($\mathcal{S}$) = 1 Cyclomatic Complexity Point (C901).
-* **Starting Score:** Both teams start with **100 $\mathcal{S}$**.
+## ⚖️ The Balanced Economy (v2.5)
+To prevent Defensive Collapse, we adhere to the **Law of Conservation of Complexity**:
+* **The Grant:** When the Offense plays a valid test (Complexity $k$), that energy is transferred to the Defense.
+* **The Effect:** The Defender receives $k$ tokens immediately upon a confirmed bug. This budget pays for the fix.
 
 ### 🔴 Red Team (The Offense)
 * **Goal:** Score touchdowns by finding "High Leverage" bugs.
