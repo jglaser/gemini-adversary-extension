@@ -11,7 +11,8 @@
 ## 🦓 Official Review
 * **Last Play:** {{last_move_description}}
 * **Complexity Cost:** -{{cost}} $\mathcal{S}$
-* **Penalties (Torvalds Tax):** -{{penalties}} $\mathcal{S}$
+* **Penalties:** -{{penalties}} $\mathcal{S}$
+* **Restitution (Foul Play):** {{restitution_amount}} $\mathcal{S}$
 * **Result:** {{result}}
 
 ---

@@ -10,6 +10,12 @@ In addition to the standard Ruff Referee (who counts Complexity), we have an **O
 * **The Standard:** Strict, minimal, and precise. (See `ruff.toml`).
 * **The Penalty:** Sloppy formatting, unused imports, or messy variables result in **"The Torvalds Tax."**
 
+## 🛡️ The Integrity Clause (Foul Play)
+To prevent the Defender from "fixing" bugs by deleting the tests that found them:
+* **The Offense:** Foul Play (Deleting, Disabling, or Skipping Tests).
+* **The Fine:** **50 $\mathcal{S}$ (Draconian).**
+* **Restitution:** This fine is paid **directly to the Red Team**.
+
 ## ⚖️ The Economy (Conservation of Complexity)
 **Complexity is not free.**
 * **Currency:** 1 Token ($\mathcal{S}$) = 1 Cyclomatic Complexity Point (C901).

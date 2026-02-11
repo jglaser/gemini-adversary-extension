@@ -8,6 +8,12 @@ In addition to the standard Ruff Referee (who counts Complexity), we now have an
 * **The Standard:** Strict, minimal, and precise. (See `ruff.toml`).
 * **The Penalty:** Sloppy formatting, unused imports, or messy variables result in **"The Torvalds Tax."**
 
+## 🛡️ The Integrity Clause (Foul Play)
+**Tests are Sacred.** The Blue Team is forbidden from deleting, disabling, or skipping valid tests to "pass" them.
+* **The Violation:** Reducing the test count, adding `@skip`, or commenting out test logic.
+* **The Fine:** **50 $\mathcal{S}$ (Draconian).**
+* **Symmetry Restoration:** The fine is NOT burned. It is paid **to the Red Team** as Damages.
+
 ## ⚖️ The Balanced Economy (v2.5)
 To prevent Defensive Collapse, we adhere to the **Law of Conservation of Complexity**:
 * **The Grant:** When the Offense plays a valid test (Complexity $k$), that energy is transferred to the Defense.

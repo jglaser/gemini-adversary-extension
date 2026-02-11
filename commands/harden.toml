@@ -31,6 +31,10 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
 3. **Defender's Turn (If Bug Found):**
    - **Check Insolvency:** If Balance < 0, warn "Refactor Only."
    - Fix the code.
+   - **INTEGRITY CHECK (FOUL PLAY):**
+     - Did the number of passed tests decrease?
+     - Did the Defender add `@skip` or comment out tests?
+     - **YES?** Apply **50 $\mathcal{S}$ FINE**. Transfer 50 $\mathcal{S}$ to Attacker.
    - **OFFICIAL REVIEW (RUFF):**
      - Run `ruff check --select C901 --statistics .`
      - Calculate Refactoring Bonus/Cost.
