@@ -2,7 +2,7 @@
 
 Turn code hardening into a balanced, zero-sum strategy game.
 
-## 🧱 The Immutable Source Rule (New in v2.7)
+## 🧱 The Immutable Source Rule (New in v2.6)
 **Production Code is Read-Only for the Red Team.**
 * **The Offense:** Sabotage (Red Team modifies source code to cause a failure).
 * **The Fine:** **100 $\mathcal{S}$ (Immediate Forfeiture).**
