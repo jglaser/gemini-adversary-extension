@@ -13,7 +13,12 @@ Look for `ADVERSARY.md`.
 Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
 
 **IF STATUS = ACTIVE:**
-1. **Attacker's Turn (The Offense):**
+
+1. **Check for Manual Penalties:**
+   - Did the user report a "Technical Foul" or "Loop Detection"?
+   - **YES?** Deduct **5 $\mathcal{S}$** from the current agent for "Delay of Game". **SKIP** to Output.
+
+2. **Attacker's Turn (The Offense):**
    - Generate a test case based on the Mission Focus.
    - **CRITICAL:** You may NOT modify any file except those in `tests/`. Touching source code is Sabotage.
    - **OFFICIAL REVIEW (RUFF):**
@@ -23,7 +28,7 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
    - **TIMEOUT CHECK:** Did the test hang or run forever?
      - **YES?** Call "Delay of Game". Deduct **5 $\mathcal{S}$**. STOP.
 
-2. **Evaluate Result:**
+3. **Evaluate Result:**
    - **BUG FOUND (Touchdown):**
      - Attacker gets Refund + 20 $\mathcal{S}$ Bounty.
      - Defender gets +{{test_complexity}} $\mathcal{S}$ (Subsidy).
@@ -31,7 +36,7 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
    - **SABOTAGE CHECK:** Did Red modify non-test files?
      - **YES?** Apply **100 $\mathcal{S}$ FINE**. Immediate TURNOVER.
 
-3. **Defender's Turn (If Bug Found):**
+4. **Defender's Turn (If Bug Found):**
    - **Check Insolvency:** If Balance < 0, warn "Refactor Only."
    - Fix the code.
    - **TIMEOUT CHECK:** Did the fix cause an infinite loop?
@@ -48,7 +53,7 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
      - **FAIL?** Deduct **5 $\mathcal{S}$** (Formatting) or **10 $\mathcal{S}$** (Lint).
    - **ACCOUNTING:** Update Balances.
 
-4. **Bankruptcy Check:**
+5. **Bankruptcy Check:**
    - If **Attacker** Balance < 0: Set Status = 'BANKRUPTCY_SWAP'.
    - If **Defender** Balance < 0: Warn "Defender is Insolvent!"
 

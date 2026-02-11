@@ -1,14 +1,21 @@
-# Gemini Code Duel (v2.7): The Immutable Source Edition
+# Gemini Code Duel (v2.7.1): The Technical Foul Edition
 
 Turn code hardening into a balanced, zero-sum strategy game.
 
-## 🧱 The Immutable Source Rule (New in v2.6)
+## 💀 Technical Fouls (CLI Loop Detection)
+If the `gemini-cli` kills the process because the Defender was looping (trying to fix -> failing -> trying again):
+* **The Call:** "Technical Foul."
+* **The Ruling:** You (The Human Referee) must manually levy a **Delay of Game** penalty.
+* **Recovery:**
+    1.  The turn is dead. The bug is unfixed.
+    2.  **Restart the Clock:** Run `/harden "Resume after technical foul. Deduct 5 tokens from Defender for Delay of Game."`
+
+## 🧱 The Immutable Source Rule
 **Production Code is Read-Only for the Red Team.**
 * **The Offense:** Sabotage (Red Team modifies source code to cause a failure).
 * **The Fine:** **100 $\mathcal{S}$ (Immediate Forfeiture).**
-* **The Logic:** You cannot "break" the code by rewriting it. You must break it by finding inputs that the *existing* code cannot handle.
 
-## ⏱️ Delay of Game (New in v2.7)
+## ⏱️ Delay of Game
 **Time is money.**
 * **The Offense:** Stalling (Infinite loops, timeouts, or unparsable code).
 * **The Fine:** **5 $\mathcal{S}$**.

@@ -1,6 +1,6 @@
 {
   "name": "code-duel",
-  "version": "2.7.0",
+  "version": "2.7.1",
   "description": "A symmetric, resource-constrained hardening game with strict style enforcement and anti-stalling rules.",
   "contextFileName": "GEMINI.md",
   "commands": [
