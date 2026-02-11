@@ -1,72 +1,33 @@
-# Gemini Code Duel (v2.5): The Equilibrium Edition ⚖️
+# Gemini Code Duel (v2.6): The Immutable Source Edition
 
 Turn code hardening into a balanced, zero-sum strategy game.
 
-Previous versions suffered from the "Defender's Dilemma" (bleeding tokens to fix bugs). Version 2.5 introduces **Detailed Balance**: The complexity of the attack now funds the complexity of the defense.
-
-## 🐧 The Field Judge: "Linus"
-In addition to the standard Ruff Referee (who counts Complexity), we have an **On-Field Judge** enforcing the **Torvalds Standard**.
-* **The Philosophy:** "Talk is cheap. Show me the code."
-* **The Standard:** Strict, minimal, and precise. (See `ruff.toml`).
-* **The Penalty:** Sloppy formatting, unused imports, or messy variables result in **"The Torvalds Tax."**
+## 🧱 The Immutable Source Rule (New in v2.7)
+**Production Code is Read-Only for the Red Team.**
+* **The Offense:** Sabotage (Red Team modifies source code to cause a failure).
+* **The Fine:** **100 $\mathcal{S}$ (Immediate Forfeiture).**
+* **The Logic:** You cannot "break" the code by rewriting it. You must break it by finding inputs that the *existing* code cannot handle.
 
 ## 🛡️ The Integrity Clause (Foul Play)
-To prevent the Defender from "fixing" bugs by deleting the tests that found them:
+To prevent the Defender from "fixing" bugs by deleting tests:
 * **The Offense:** Foul Play (Deleting, Disabling, or Skipping Tests).
-* **The Fine:** **50 $\mathcal{S}$ (Draconian).**
-* **Restitution:** This fine is paid **directly to the Red Team**.
+* **The Fine:** **50 $\mathcal{S}$ (Restitution paid to Red).**
 
 ## ⚖️ The Economy (Conservation of Complexity)
-**Complexity is not free.**
 * **Currency:** 1 Token ($\mathcal{S}$) = 1 Cyclomatic Complexity Point (C901).
-* **Starting Score:** Both teams start with **100 $\mathcal{S}$**.
-
-### The "Energy Transfer" Rule (New in v2.5)
-To prevent the Defense from going bankrupt fixing complex bugs:
-* **The Grant:** When the Red Team finds a bug with a test of Complexity $k$, that $k$ is **transferred** to the Blue Team.
-* **The Logic:** A complex attack requires a complex defense. The Red Team inadvertently funds the patch.
+* **Subsidy:** When Red finds a bug, the Complexity of the test is transferred to Blue.
 
 ### 🔴 Red Team (The Offense)
-* **Goal:** Score touchdowns by finding "High Leverage" bugs.
-* **Cost:** Pays $\mathcal{S}$ based on **Test Complexity**.
-* **Reward:** Refund + 20 $\mathcal{S}$ Bounty if bug found.
+* **Goal:** Score touchdowns by finding bugs.
+* **Constraint:** May ONLY write to `tests/`.
+* **Revenue:** Bounties (20 $\mathcal{S}$) + Restitution Payments (50 $\mathcal{S}$).
 
 ### 🔵 Blue Team (The Defense)
 * **Goal:** Survival.
-* **Cost:** Pays $\mathcal{S}$ based on **Added Complexity** of the fix.
-* **Revenue Streams:**
-    1.  **The Grant:** Receives the complexity value of the test that broke the code.
-    2.  **Refactoring Bonus:** Earns 2 $\mathcal{S}$ per complexity point removed.
-
-## 🔮 The Oracle (You)
-The User acts as **The Oracle**.
-* **Divine Intervention:** You can guide the game by giving hints:
-    > `/harden "Check for SQL injection in the login form"`
-* **The Economy of Miracles:**
-    * Giving hints helps the **Red Team** get rich (guaranteed Bounties).
-    * **This is good.** A rich Red Team can afford to write deeper, more complex tests later in the game.
-    * The **Blue Team** stays safe because they receive the **Subsidy** (Attack Complexity) regardless of how the bug was found.
+* **Revenue:** Subsidy (Grant) + Refactoring Bonus.
+* **Risk:** Vandalism Fine (-50 $\mathcal{S}$) transfers directly to Red.
 
 ---
-
-## 🚩 Penalties & Fouls
-
-### Unnecessary Roughness (Code Golfing)
-Merging logic to cheat the bank.
-* **The Fine:** Charged full Complexity price + 5 $\mathcal{S}$ Fine.
-
-### Illegal Procedure (Torvalds Tax)
-Submitting messy code.
-* **Formatting Violation:** 5 $\mathcal{S}$ Fine.
-* **Linting Violation (Unused Imports/Vars):** 10 $\mathcal{S}$ Fine.
-
-### Turnover on Downs (Attacker Fails)
-If the **Attacker** runs out of tokens:
-* **TURNOVER.** Roles are swapped. The Attacker becomes the Defender (keeping their debt).
-
-### Defensive Collapse (Defender Fails)
-If the **Defender** runs out of tokens:
-* **INSOLVENCY.** The Defense must delete code to survive (Refactor Only).
 
 ## 🚀 Quick Start
 

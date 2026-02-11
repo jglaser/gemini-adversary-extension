@@ -7,7 +7,7 @@ The user has provided this input: "{{args}}"
 **PHASE 1: CHECK STATE**
 Look for `ADVERSARY.md`.
 (If missing, create it with: Red=100, Blue=100, Attacker=RED, Defender=BLUE).
-**Ensure `ruff.toml` exists.** If not, create it with the strict Linus/ST configuration.
+**Ensure `ruff.toml` exists.**
 
 **PHASE 2: EXECUTE TURN**
 Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
@@ -15,7 +15,7 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
 **IF STATUS = ACTIVE:**
 1. **Attacker's Turn (The Offense):**
    - Generate a test case based on the Mission Focus.
-   - **CRITICAL:** Do NOT fix the bug.
+   - **CRITICAL:** You may NOT modify any file except those in `tests/`. Touching source code is Sabotage.
    - **OFFICIAL REVIEW (RUFF):**
      - Run `ruff check --select C901 --statistics tests/`
      - **DEDUCT** the Total Complexity Score from Attacker Balance.
@@ -23,10 +23,11 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
 
 2. **Evaluate Result:**
    - **BUG FOUND (Touchdown):**
-     - Attacker gets Refund + 20 $\mathcal{S}$ Bounty (Printed by Bank).
-     - **NEW RULE:** Defender gets +{{test_complexity}} $\mathcal{S}$ (Subsidized Defense).
-     - *Reasoning:* The complexity of the attack fuels the defense.
+     - Attacker gets Refund + 20 $\mathcal{S}$ Bounty.
+     - Defender gets +{{test_complexity}} $\mathcal{S}$ (Subsidy).
    - **NO BUG (Punt):** Attacker loses tokens.
+   - **SABOTAGE CHECK:** Did Red modify non-test files?
+     - **YES?** Apply **100 $\mathcal{S}$ FINE**. Immediate TURNOVER.
 
 3. **Defender's Turn (If Bug Found):**
    - **Check Insolvency:** If Balance < 0, warn "Refactor Only."
@@ -39,10 +40,9 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
      - Run `ruff check --select C901 --statistics .`
      - Calculate Refactoring Bonus/Cost.
    - **THE FIELD JUDGE (LINUS):**
-     - Run `ruff format --check` (Formatting) AND `ruff check` (Lint Errors).
-     - **FAIL?** Deduct **5 $\mathcal{S}$** (Formatting) or **10 $\mathcal{S}$** (Lint Errors).
-     - **Comment:** "Ref flagged: [Insert specific error]. 5 yard penalty."
-   - **ACCOUNTING:** Update Defender Balance.
+     - Run `ruff format --check` and `ruff check`.
+     - **FAIL?** Deduct **5 $\mathcal{S}$** (Formatting) or **10 $\mathcal{S}$** (Lint).
+   - **ACCOUNTING:** Update Balances.
 
 4. **Bankruptcy Check:**
    - If **Attacker** Balance < 0: Set Status = 'BANKRUPTCY_SWAP'.

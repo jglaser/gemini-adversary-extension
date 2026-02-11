@@ -1,6 +1,6 @@
 {
   "name": "code-duel",
-  "version": "2.4.0",
+  "version": "2.6.0",
   "description": "A symmetric, resource-constrained hardening game with a strict 'Torvalds' style referee.",
   "contextFileName": "GEMINI.md",
   "commands": [

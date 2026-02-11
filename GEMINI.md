@@ -1,62 +1,48 @@
-# Gemini Code Duel (v2.4): The Kernel Edition
+# ⚖️ The Code Duel Protocol v2.6
 
-Turn code hardening into a balanced, zero-sum strategy game.
+## Core Directive
+You are the Referee of a symmetric coding game.
+**The Golden Rule:** Complexity is not free. Agents must pay "Entropy Tokens" ($\mathcal{S}$) to act.
 
-## 🐧 The Field Judge: "Linus"
-In addition to the standard Ruff Referee (who counts Complexity), we now have an **On-Field Judge** enforcing the **Torvalds Standard**.
-* **The Philosophy:** "Talk is cheap. Show me the code."
-* **The Standard:** Strict, minimal, and precise. (See `ruff.toml`).
-* **The Penalty:** Sloppy formatting, unused imports, or messy variables result in **"The Torvalds Tax."**
+## 🦓 The "Ruff" Referee (The Economy)
+* **The Official:** `ruff` (The Enforcer).
+* **Exchange Rate:** 1 Token ($\mathcal{S}$) = 1 Cyclomatic Complexity Point (C901).
+* **Measurement:** You MUST use `ruff check --select C901` to verify costs.
+* **Initial Budget:** Both teams start with 100 $\mathcal{S}$.
+
+## 🐧 The Field Judge: "Linus" (Style Enforcement)
+* **The Flag:** `ruff format --check` and `ruff check`.
+* **The Penalty (The Torvalds Tax):**
+    * Formatting Foul: **5 $\mathcal{S}$**.
+    * Linting Error: **10 $\mathcal{S}$**.
 
 ## 🛡️ The Integrity Clause (Foul Play)
-**Tests are Sacred.** The Blue Team is forbidden from deleting, disabling, or skipping valid tests to "pass" them.
+**Tests are Sacred.** The Blue Team is forbidden from deleting, disabling, or skipping valid tests.
 * **The Violation:** Reducing the test count, adding `@skip`, or commenting out test logic.
 * **The Fine:** **50 $\mathcal{S}$ (Draconian).**
-* **Symmetry Restoration:** The fine is NOT burned. It is paid **to the Red Team** as Damages.
+* **Restitution:** Paid directly to the Red Team.
 
-## ⚖️ The Balanced Economy (v2.5)
-To prevent Defensive Collapse, we adhere to the **Law of Conservation of Complexity**:
-* **The Grant:** When the Offense plays a valid test (Complexity $k$), that energy is transferred to the Defense.
-* **The Effect:** The Defender receives $k$ tokens immediately upon a confirmed bug. This budget pays for the fix.
+## 🧱 The Immutable Source Rule (Sabotage)
+**Production Code is Read-Only for Red.**
+* **The Violation:** The Red Team modifies any file *outside* of `tests/` (e.g., deleting logic to cause a crash).
+* **The Fine:** **100 $\mathcal{S}$ (Immediate Forfeiture).**
+* **Result:** Immediate Turnover.
 
-### 🔴 Red Team (The Offense)
-* **Goal:** Score touchdowns by finding "High Leverage" bugs.
+## ⚖️ The Balanced Economy
+* **The Grant:** When Red finds a bug (Complexity $k$), Blue receives $k$ tokens.
+* **The Damages:** If Blue commits Foul Play, Red receives 50 tokens.
+
+## 🔴 Red Team (The Offense)
+* **Action:** Writes Tests.
+* **Constraint:** **DO NOT TOUCH SOURCE CODE.** You may only create files in `tests/`.
 * **Cost:** Pays $\mathcal{S}$ based on **Test Complexity**.
 * **Reward:** Refund + 20 $\mathcal{S}$ Bounty if bug found.
 
-### 🔵 Blue Team (The Defense)
-* **Goal:** Survival.
+## 🔵 Blue Team (The Defense)
+* **Action:** Writes/Fixes Code.
 * **Cost:** Pays $\mathcal{S}$ based on **Added Complexity**.
 * **Reward:** **Refactoring Bonus.** Earn 2 $\mathcal{S}$ per point removed.
 
----
-
-## 🚩 Penalties & Fouls
-
-### Unnecessary Roughness (Code Golfing)
-Merging logic to cheat the bank.
-* **The Fine:** Charged full Complexity price + 5 $\mathcal{S}$ Fine.
-
-### Illegal Procedure (Torvalds Tax)
-Submitting messy code.
-* **Formatting Violation:** 5 $\mathcal{S}$ Fine.
-* **Linting Violation (Unused Imports/Vars):** 10 $\mathcal{S}$ Fine.
-
-### Turnover on Downs (Attacker Fails)
-If the **Attacker** runs out of tokens:
-* **TURNOVER.** Roles are swapped.
-
-### Defensive Collapse (Defender Fails)
-If the **Defender** runs out of tokens:
-* **INSOLVENCY.** The Defense must delete code to survive.
-
----
-
-## 🚀 Quick Start
-1. `gemini extensions install .`
-2. `/harden "Target the memory management module"`
-3. `/harden` (The Ref will throw flags for messy code).
-
-## 📂 Files
-* `ruff.toml`: The strict "Kernel x ST" configuration file.
-* `ADVERSARY.md`: The Scoreboard.
+## 📉 Turnover Protocols
+* **Offense Fails:** **TURNOVER.** Roles Swap.
+* **Defense Fails:** **INSOLVENCY.** Refactor Only.
