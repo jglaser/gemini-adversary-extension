@@ -20,6 +20,8 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
      - Run `ruff check --select C901 --statistics tests/`
      - **DEDUCT** the Total Complexity Score from Attacker Balance.
    - Run the test.
+   - **TIMEOUT CHECK:** Did the test hang or run forever?
+     - **YES?** Call "Delay of Game". Deduct **5 $\mathcal{S}$**. STOP.
 
 2. **Evaluate Result:**
    - **BUG FOUND (Touchdown):**
@@ -32,6 +34,8 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
 3. **Defender's Turn (If Bug Found):**
    - **Check Insolvency:** If Balance < 0, warn "Refactor Only."
    - Fix the code.
+   - **TIMEOUT CHECK:** Did the fix cause an infinite loop?
+     - **YES?** Call "Delay of Game". Deduct **5 $\mathcal{S}$**. STOP.
    - **INTEGRITY CHECK (FOUL PLAY):**
      - Did the number of passed tests decrease?
      - Did the Defender add `@skip` or comment out tests?

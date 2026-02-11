@@ -1,4 +1,4 @@
-# Gemini Code Duel (v2.6): The Immutable Source Edition
+# Gemini Code Duel (v2.7): The Immutable Source Edition
 
 Turn code hardening into a balanced, zero-sum strategy game.
 
@@ -7,6 +7,12 @@ Turn code hardening into a balanced, zero-sum strategy game.
 * **The Offense:** Sabotage (Red Team modifies source code to cause a failure).
 * **The Fine:** **100 $\mathcal{S}$ (Immediate Forfeiture).**
 * **The Logic:** You cannot "break" the code by rewriting it. You must break it by finding inputs that the *existing* code cannot handle.
+
+## ⏱️ Delay of Game (New in v2.7)
+**Time is money.**
+* **The Offense:** Stalling (Infinite loops, timeouts, or unparsable code).
+* **The Fine:** **5 $\mathcal{S}$**.
+* **The Result:** Loss of Down (Turn ends immediately).
 
 ## 🛡️ The Integrity Clause (Foul Play)
 To prevent the Defender from "fixing" bugs by deleting tests:
@@ -48,11 +54,3 @@ pip3 install pytest ruff
 gemini extensions install .
 gemini
 ```
-
-This will start the gemini cli interface.  To test the new /harden command, try:
-
-    /harden buggy.py
-
-### 2. Note of caution
-
-A game should be played on a new feature branch.
