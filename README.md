@@ -32,6 +32,15 @@ To prevent the Defense from going bankrupt fixing complex bugs:
     1.  **The Grant:** Receives the complexity value of the test that broke the code.
     2.  **Refactoring Bonus:** Earns 2 $\mathcal{S}$ per complexity point removed.
 
+## 🔮 The Oracle (You)
+The User acts as **The Oracle**.
+* **Divine Intervention:** You can guide the game by giving hints:
+    > `/harden "Check for SQL injection in the login form"`
+* **The Economy of Miracles:**
+    * Giving hints helps the **Red Team** get rich (guaranteed Bounties).
+    * **This is good.** A rich Red Team can afford to write deeper, more complex tests later in the game.
+    * The **Blue Team** stays safe because they receive the **Subsidy** (Attack Complexity) regardless of how the bug was found.
+
 ---
 
 ## 🚩 Penalties & Fouls
