@@ -1,17 +1,24 @@
-# Gemini Code Duel (v2.4): The Kernel Edition
+# Gemini Code Duel (v2.5): The Equilibrium Edition ⚖️
 
 Turn code hardening into a balanced, zero-sum strategy game.
 
+Previous versions suffered from the "Defender's Dilemma" (bleeding tokens to fix bugs). Version 2.5 introduces **Detailed Balance**: The complexity of the attack now funds the complexity of the defense.
+
 ## 🐧 The Field Judge: "Linus"
-In addition to the standard Ruff Referee (who counts Complexity), we now have an **On-Field Judge** enforcing the **Torvalds Standard**.
+In addition to the standard Ruff Referee (who counts Complexity), we have an **On-Field Judge** enforcing the **Torvalds Standard**.
 * **The Philosophy:** "Talk is cheap. Show me the code."
 * **The Standard:** Strict, minimal, and precise. (See `ruff.toml`).
 * **The Penalty:** Sloppy formatting, unused imports, or messy variables result in **"The Torvalds Tax."**
 
-## ⚖️ The Economy
+## ⚖️ The Economy (Conservation of Complexity)
 **Complexity is not free.**
 * **Currency:** 1 Token ($\mathcal{S}$) = 1 Cyclomatic Complexity Point (C901).
 * **Starting Score:** Both teams start with **100 $\mathcal{S}$**.
+
+### The "Energy Transfer" Rule (New in v2.5)
+To prevent the Defense from going bankrupt fixing complex bugs:
+* **The Grant:** When the Red Team finds a bug with a test of Complexity $k$, that $k$ is **transferred** to the Blue Team.
+* **The Logic:** A complex attack requires a complex defense. The Red Team inadvertently funds the patch.
 
 ### 🔴 Red Team (The Offense)
 * **Goal:** Score touchdowns by finding "High Leverage" bugs.
@@ -20,8 +27,10 @@ In addition to the standard Ruff Referee (who counts Complexity), we now have an
 
 ### 🔵 Blue Team (The Defense)
 * **Goal:** Survival.
-* **Cost:** Pays $\mathcal{S}$ based on **Added Complexity**.
-* **Reward:** **Refactoring Bonus.** Earn 2 $\mathcal{S}$ per point removed.
+* **Cost:** Pays $\mathcal{S}$ based on **Added Complexity** of the fix.
+* **Revenue Streams:**
+    1.  **The Grant:** Receives the complexity value of the test that broke the code.
+    2.  **Refactoring Bonus:** Earns 2 $\mathcal{S}$ per complexity point removed.
 
 ---
 
@@ -38,11 +47,11 @@ Submitting messy code.
 
 ### Turnover on Downs (Attacker Fails)
 If the **Attacker** runs out of tokens:
-* **TURNOVER.** Roles are swapped.
+* **TURNOVER.** Roles are swapped. The Attacker becomes the Defender (keeping their debt).
 
 ### Defensive Collapse (Defender Fails)
 If the **Defender** runs out of tokens:
-* **INSOLVENCY.** The Defense must delete code to survive.
+* **INSOLVENCY.** The Defense must delete code to survive (Refactor Only).
 
 ## 🚀 Quick Start
 
