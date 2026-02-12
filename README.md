@@ -33,11 +33,6 @@ To prevent "Delay of Game" caused by the Agent looping through file directories,
 ---
 
 ## 🚀 Quick Start
-1. `pip3 install mcp`
-2. `gemini extensions install .`
-3. `/harden`
-
-## 🚀 Quick Start
 
 ### 1. Install
 
@@ -52,7 +47,7 @@ Then run the command-line interface, `gemini` on its own to login.
 Navigate to this directory and run:
 
 ```bash
-pip3 install pytest ruff
+pip3 install pytest ruff mcp
 gemini extensions install .
 gemini
 ```
