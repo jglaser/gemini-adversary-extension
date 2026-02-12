@@ -1,3 +1,4 @@
 google-generative-ai
 pytest
 ruff
+mcp

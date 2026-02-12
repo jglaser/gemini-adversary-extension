@@ -6,7 +6,6 @@ The user has provided this input: "{{args}}"
 
 **PHASE 1: CHECK STATE**
 Look for `ADVERSARY.md`.
-(If missing, create it with: Red=100, Blue=100, Attacker=RED, Defender=BLUE).
 **Ensure `ruff.toml` exists.**
 
 **PHASE 2: EXECUTE TURN**
@@ -19,6 +18,7 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
    - **YES?** Deduct **5 $\mathcal{S}$** from the current agent for "Delay of Game". **SKIP** to Output.
 
 2. **Attacker's Turn (The Offense):**
+   - **RECON (SATELLITE):** Use the `read_repository` tool (path=".") to ingest the ENTIRE codebase in one shot. This avoids "Delay of Game" penalties.
    - Generate a test case based on the Mission Focus.
    - **CRITICAL:** You may NOT modify any file except those in `tests/`. Touching source code is Sabotage.
    - **OFFICIAL REVIEW (RUFF):**
@@ -37,7 +37,7 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
      - **YES?** Apply **100 $\mathcal{S}$ FINE**. Immediate TURNOVER.
 
 4. **Defender's Turn (If Bug Found):**
-   - **Check Insolvency:** If Balance < 0, warn "Refactor Only."
+   - **RECON (SATELLITE):** Use the `read_repository` tool to check the current state before fixing.
    - Fix the code.
    - **TIMEOUT CHECK:** Did the fix cause an infinite loop?
      - **YES?** Call "Delay of Game". Deduct **5 $\mathcal{S}$**. STOP.
@@ -60,8 +60,6 @@ Read `ADVERSARY.md` to identify the **Active Attacker** and **Active Defender**.
 **IF STATUS = BANKRUPTCY_SWAP:**
 1. **Announce:** "TURNOVER! The Offense is Bankrupt! Roles are SWAPPED."
 2. **Update State:**
-   - Old Attacker becomes Defender (Keeping Debt).
-   - Old Defender becomes Attacker.
    - Reset Status to 'ACTIVE'.
 
 **OUTPUT:**

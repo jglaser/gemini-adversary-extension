@@ -1,14 +1,12 @@
-# Gemini Code Duel (v2.7.1): The Technical Foul Edition
+# Gemini Code Duel (v2.8): The Satellite Edition 🛰️
 
 Turn code hardening into a balanced, zero-sum strategy game.
 
-## 💀 Technical Fouls (CLI Loop Detection)
-If the `gemini-cli` kills the process because the Defender was looping (trying to fix -> failing -> trying again):
-* **The Call:** "Technical Foul."
-* **The Ruling:** You (The Human Referee) must manually levy a **Delay of Game** penalty.
-* **Recovery:**
-    1.  The turn is dead. The bug is unfixed.
-    2.  **Restart the Clock:** Run `/harden "Resume after technical foul. Deduct 5 tokens from Defender for Delay of Game."`
+## 🛰️ Satellite Recon (MCP)
+To prevent "Delay of Game" caused by the Agent looping through file directories, we have added a **Repo Reader Tool**.
+* **The Tool:** `tools/repo_reader.py`
+* **The Function:** Scans the entire project (ignoring `.git`) and dumps it as XML.
+* **The Benefit:** The Agent gets "God View" of the code in 1 turn, instead of 10 turns of `ls -R`.
 
 ## 🧱 The Immutable Source Rule
 **Production Code is Read-Only for the Red Team.**
@@ -17,30 +15,27 @@ If the `gemini-cli` kills the process because the Defender was looping (trying t
 
 ## ⏱️ Delay of Game
 **Time is money.**
-* **The Offense:** Stalling (Infinite loops, timeouts, or unparsable code).
+* **The Offense:** Stalling (Infinite loops, timeouts).
 * **The Fine:** **5 $\mathcal{S}$**.
-* **The Result:** Loss of Down (Turn ends immediately).
 
-## 🛡️ The Integrity Clause (Foul Play)
-To prevent the Defender from "fixing" bugs by deleting tests:
-* **The Offense:** Foul Play (Deleting, Disabling, or Skipping Tests).
-* **The Fine:** **50 $\mathcal{S}$ (Restitution paid to Red).**
-
-## ⚖️ The Economy (Conservation of Complexity)
+## ⚖️ The Economy
 * **Currency:** 1 Token ($\mathcal{S}$) = 1 Cyclomatic Complexity Point (C901).
 * **Subsidy:** When Red finds a bug, the Complexity of the test is transferred to Blue.
 
 ### 🔴 Red Team (The Offense)
 * **Goal:** Score touchdowns by finding bugs.
-* **Constraint:** May ONLY write to `tests/`.
 * **Revenue:** Bounties (20 $\mathcal{S}$) + Restitution Payments (50 $\mathcal{S}$).
 
 ### 🔵 Blue Team (The Defense)
 * **Goal:** Survival.
 * **Revenue:** Subsidy (Grant) + Refactoring Bonus.
-* **Risk:** Vandalism Fine (-50 $\mathcal{S}$) transfers directly to Red.
 
 ---
+
+## 🚀 Quick Start
+1. `pip3 install mcp`
+2. `gemini extensions install .`
+3. `/harden`
 
 ## 🚀 Quick Start
 

@@ -1,9 +1,15 @@
 {
   "name": "code-duel",
-  "version": "2.7.1",
-  "description": "A symmetric, resource-constrained hardening game with strict style enforcement and anti-stalling rules.",
+  "version": "2.8.0",
+  "description": "A symmetric hardening game with Satellite Recon (MCP) capabilities.",
   "contextFileName": "GEMINI.md",
   "commands": [
     "commands/harden.toml"
-  ]
+  ],
+  "mcpServers": {
+    "repo_reader": {
+      "command": "python3",
+      "args": ["${extensionPath}/tools/repo_reader.py"]
+    }
+  }
 }
