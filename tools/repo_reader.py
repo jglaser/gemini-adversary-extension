@@ -12,20 +12,32 @@ except ImportError:
     FastMCP = None
 
 # Configuration
-IGNORE_DIRS = {".git", ".venv", "__pycache__", ".ruff_cache", ".pytest_cache", "build", "dist", "node_modules"}
-IGNORE_EXTS = {".pyc", ".o", ".so", ".dll", ".class", ".exe", ".bin"}
+IGNORE_DIRS = {".git", ".venv", "__pycache__", ".ruff_cache", ".pytest_cache", "build", "dist", "node_modules", "site-packages"}
+
+# STRICT WHITELIST: Only these text-based formats are allowed.
+ALLOWED_EXTS = {
+    # Code
+    ".py", ".js", ".ts", ".c", ".cpp", ".h", ".rs", ".go", ".java", ".sh",
+    # Data / Config
+    ".json", ".toml", ".yaml", ".yml", ".xml", ".csv",
+    # Docs
+    ".md", ".txt", ".rst"
+}
 
 def scan_repo(root_dir: str) -> str:
-    """Internal logic to scan the repo."""
+    """Internal logic to scan the repo using a strict whitelist."""
     output = []
     abs_root = os.path.abspath(root_dir)
     output.append(f"<repository_context root='{abs_root}'>")
     
     for dirpath, dirnames, filenames in os.walk(abs_root):
+        # Filter directories
         dirnames[:] = [d for d in dirnames if d not in IGNORE_DIRS]
         
         for f in filenames:
-            if any(f.endswith(ext) for ext in IGNORE_EXTS):
+            # CHECK WHITELIST
+            _, ext = os.path.splitext(f)
+            if ext not in ALLOWED_EXTS:
                 continue
                 
             path = os.path.join(dirpath, f)
@@ -48,7 +60,7 @@ if FastMCP:
     @mcp.tool()
     def read_repository(path: str = ".") -> str:
         """
-        Reads the entire repository source code.
+        Reads the entire repository source code (whitelisted text files only).
         
         Args:
             path: The relative path to the root of the repository (default: ".")
